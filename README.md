@@ -2,6 +2,7 @@
 
 An app for digitalising medical documents.
 This app lets you keep all the health related documents with you, whenever you go, wherever you go.
+Its hard for people to maintain their documents realted to their health and their doctor prescriptions.This app help you to digitalise all the important documents so that you can easily access it whenever you need it.
 
 ## Screenshots
 
