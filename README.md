@@ -1,12 +1,12 @@
 ## Doc_Case App Flutter 
 
-An App for digitalising medical documents
+An app for digitalising medical documents
 
 ## Screenshots
 
 | Home Page | Upload Page  |
 | --- | --- |
-| ![](screenshots/screenshot-1.png)|![](screenshots/screenshot-2.png)|
+| ![](screenshots/ss1.jpg)|![](screenshots/ss2.jpg)|
 
 ## Apk Drive Link
 https://drive.google.com/drive/folders/1kaUMyGFId_B312-gMJLIFL9b1q5Il_o1?usp=sharing
