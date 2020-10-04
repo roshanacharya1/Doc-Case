@@ -190,23 +190,28 @@ String currentuuser;
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 dropdown(),
-                ConstrainedBox(
-                  constraints: const BoxConstraints.tightFor(width: 100.0),
-                  child: _pickType == FileType.custom
-                      ? TextFormField(
-                          maxLength: 15,
-                          autovalidate: true,
-                          controller: _controller,
-                          decoration:
-                              InputDecoration(labelText: 'File extension'),
-                          keyboardType: TextInputType.text,
-                          textCapitalization: TextCapitalization.none,
-                        )
-                      : const SizedBox(),
+                Container(
+                  alignment: Alignment.center,
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints.tightFor(width: 300.0),
+                    child: _pickType == FileType.custom
+                        ? TextFormField(
+                            maxLength: 15,
+                            autovalidate: true,
+                            controller: _controller,
+                            decoration:
+                                InputDecoration(labelText: 'File extension'),
+                            keyboardType: TextInputType.text,
+                            textCapitalization: TextCapitalization.none,
+
+                          )
+                        : const SizedBox(),
+                  ),
                 ),
                 ConstrainedBox(
                   constraints: const BoxConstraints.tightFor(width: 200.0),
                   child: SwitchListTile.adaptive(
+                    activeTrackColor: Color(0xff080E2D),
                     title:
                         Text('Pick multiple files', textAlign: TextAlign.right),
                     onChanged: (bool value) =>
@@ -219,8 +224,11 @@ String currentuuser;
                   child: Column(
                     children: <Widget>[
                       RaisedButton(
+                        color:Color(0xff080D2E),
                         onPressed: () => _openFileExplorer(),
-                        child: Text("Open file picker"),
+                        child: Text("Open file picker",style:TextStyle(
+                          color: Colors.white
+                        )),
                       ),
 
                     ],

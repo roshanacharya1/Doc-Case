@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 final _firestore = Firestore.instance;
-String CurrentUser;
-
-class DownloadScreen extends StatefulWidget {
-  static String Id="DownloadScreen";
+String currentuuser;
+class DownLoadScren extends StatefulWidget {
+  static const String id = 'DownLoadScreen';
   @override
-  _DownloadScreenState createState() => _DownloadScreenState();
+  _DownLoadScrenState createState() => _DownLoadScrenState();
 }
 
-class _DownloadScreenState extends State<DownloadScreen> {
-final _auth =FirebaseAuth.instance;
+class _DownLoadScrenState extends State<DownLoadScren> {
+  String message;
+  final textcontroller = TextEditingController();
 
+// ignore: deprecated_member_use
+  final _auth = FirebaseAuth.instance;
+// ignore: deprecated_member_use
 
   @override
   void initState() {
@@ -21,20 +23,21 @@ final _auth =FirebaseAuth.instance;
     super.initState();
     currentuser();
   }
+
   void currentuser() async {
     try {
       final user = await _auth.currentUser;
       if (user != null) {
-        CurrentUser = user.email;
+        currentuuser = user.email;
 
-        print(CurrentUser);
+        print(currentuuser);
       }
     } catch (e) {
       print(e);
     }
   }
 
-  void getUrl() async {
+  void getmessage() async {
     await for (var snapshot in _firestore.collection('Urls').snapshots()) {
       // ignore: deprecated_member_use
       for (var mess in snapshot.documents) {
@@ -43,29 +46,33 @@ final _auth =FirebaseAuth.instance;
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          FlatButton(
-            color: Colors.teal,
 
-            onPressed: (){
-              UrlStreams();
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            MessageStream(),
+            Container(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
 
-            },
-          )
-        ],
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
-class UrlStreams extends StatelessWidget {
+
+class MessageStream extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  StreamBuilder<QuerySnapshot>(
@@ -73,28 +80,29 @@ class UrlStreams extends StatelessWidget {
       builder: (context, snapshot) {
         // ignore: deprecated_member_use
         final messages = snapshot.data.documents.reversed;
-        List<ImageBubbles> ImageWidgets = [];
+        List<MessageBubble> messagewidgets = [];
         for (var message in messages) {
           if(message==null){
             return CircularProgressIndicator();
           }
           // ignore: missing_return
-          final messageText = message.data()['Url'];
-          final messageSender = message.data()['User'];
-          final curr=CurrentUser;
+          final messageText = message.data()['text'];
+          final messageSender = message.data()['user'];
+          final curr=currentuuser;
           bool userq;
           userq=messageSender==curr;
-          final messageBubble = ImageBubbles(
+          if(userq){
+          final messageBubble = MessageBubble(
               text: messageText,
               sender: messageSender,
               userq:userq
           );
-          ImageWidgets.add(messageBubble);
-        }
+          messagewidgets.add(messageBubble);
+        }}
         return Expanded(
           child: ListView(
             reverse: true,
-            children: ImageWidgets,
+            children: messagewidgets,
           ),
         );
       },
@@ -103,49 +111,40 @@ class UrlStreams extends StatelessWidget {
 }
 
 
-class ImageBubbles extends StatelessWidget {
-  ImageBubbles({this.text, this.sender,this.userq});
+class MessageBubble extends StatelessWidget {
+  MessageBubble({this.text, this.sender,this.userq});
   final String text;
   final String sender;
   final bool userq;
   @override
   Widget build(BuildContext context) {
-   if(userq) {
-     return Padding(
+    return Padding(
 
-       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-       child: Column(
-         crossAxisAlignment: userq ? CrossAxisAlignment.end : CrossAxisAlignment
-             .start,
-         children: [
-           Text(
-             sender,
-             style: TextStyle(
-               color: Colors.black54,
-             ),
-           ),
-           Material(
-             elevation: 10,
-             borderRadius: userq ? BorderRadius.only(
-                 topLeft: Radius.circular(30.0),
-                 bottomRight: Radius.circular(30.0),
-                 bottomLeft: Radius.circular(30.0)) : BorderRadius.only(
-                 topRight: Radius.circular(30.0),
-                 bottomRight: Radius.circular(30.0),
-                 bottomLeft: Radius.circular(30.0)),
-             color: userq ? Colors.lightBlueAccent : Colors.white,
-             child: Padding(
-               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-               child: Text(
-                 text,
-                 style: TextStyle(
-                     fontSize: 15, color: userq ? Colors.white : Colors.black),
-               ),
-             ),
-           ),
-         ],
-       ),
-     );
-   }
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text(
+            sender,
+            style: TextStyle(
+              color: Colors.black54,
+            ),
+          ),
+          Material(
+            elevation: 10,
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0),bottomRight: Radius.circular(30.0),bottomLeft: Radius.circular(30.0)),
+            color:Color(0xff080E2D),
+
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              child: Text(
+                text,
+                style: TextStyle(fontSize: 15,color:Colors.white),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
