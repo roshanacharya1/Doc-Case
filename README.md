@@ -1,6 +1,7 @@
 ## Doc_Case App Flutter 
 
-An app for digitalising medical documents
+An app for digitalising medical documents.
+This app lets you keep all the health related documents with you, whenever you go, wherever you go.
 
 ## Screenshots
 
