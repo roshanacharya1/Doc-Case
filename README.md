@@ -6,9 +6,9 @@ Its hard for people to maintain their documents realted to their health and thei
 
 ## Screenshots
 
-| Sign In/Register Page | Home Page  |
+| Sign In Page | Register Page | Home Page  |
 | --- | --- |
-| ![](screenshots/ss1.jpg)|![](screenshots/ss2.jpg)|
+| ![](sceenshots/ss1.jpeg)|![](sceenshots/ss2.jpeg)|![](sceenshots/ss3.jpeg)|
 
 ## Apk Drive Link
 https://drive.google.com/drive/folders/1kaUMyGFId_B312-gMJLIFL9b1q5Il_o1?usp=sharing
