@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "412709101781",
+    "firebase_url": "https://hackathon-2e728.firebaseio.com",
+    "project_id": "hackathon-2e728",
+    "storage_bucket": "hackathon-2e728.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412709101781:android:f38fb3d495b6d712d8c25c",
+        "android_client_info": {
+          "package_name": "roshan.doc_case_beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412709101781-7ib55nj2mmj5vd7bae30r6vbfiov8j4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoymmLzRDT7DCLRUjEX5e2Rsco-UVN-IA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412709101781-7ib55nj2mmj5vd7bae30r6vbfiov8j4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
