@@ -1,13 +1,17 @@
-## Medical App Flutter Design
+## Doc_Case App Flutter 
 
-Application design is based on [Medical App Freebies!](https://dribbble.com/shots/11196293-Medical-App-Freebies) 
-designed by [Sub1](https://dribbble.com/Sub1)
+An app for digitalising medical documents.
+This app lets you keep all the health related documents with you, whenever you go, wherever you go.
+Its hard for people to maintain their documents realted to their health and their doctor prescriptions.This app help you to digitalise all the important documents so that you can easily access it whenever you need it.
 
 ## Screenshots
 
-| Home Page | Details Page  |
+| Sign In/Register Page | Home Page  |
 | --- | --- |
-| ![](screenshots/screenshot-1.png)|![](screenshots/screenshot-2.png)|
+| ![](screenshots/ss1.jpg)|![](screenshots/ss2.jpg)|
+
+## Apk Drive Link
+https://drive.google.com/drive/folders/1kaUMyGFId_B312-gMJLIFL9b1q5Il_o1?usp=sharing
 
 ## Getting Started
 

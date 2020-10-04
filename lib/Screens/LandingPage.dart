@@ -30,19 +30,14 @@ class _LandingScrenState extends State<LandingScren> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-
               child: Padding(
-
                 padding: const EdgeInsets.all(10.0),
                 child: GestureDetector(
-
                     onTap: () {
                       Navigator.pushNamed(context, UploadFile.ID);
                     },
                     child: Container(
-
                       decoration: BoxDecoration(
-
                           color: Color(0xff1D1F33),
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       child: Center(
