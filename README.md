@@ -6,7 +6,7 @@ Its hard for people to maintain their documents realted to their health and thei
 
 ## Screenshots
 
-| Home Page | Upload Page  |
+| Sign In/Register Page | Home Page  |
 | --- | --- |
 | ![](screenshots/ss1.jpg)|![](screenshots/ss2.jpg)|
 
