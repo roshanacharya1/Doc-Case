@@ -8,7 +8,7 @@ Its hard for people to maintain their documents realted to their health and thei
 
 | Sign In Page | Register Page | Home Page  |
 | --- | --- | --- |
-| ![](sceenshots/ss1.jpeg)|![](sceenshots/ss2.jpeg)|![](sceenshots/ss3.jpeg)|
+| ![](ScreenShots/SignIn.jpg)|![](ScreenShots/Register.jpg)|![](SceenShots/LandinPa.jpg)|
 
 ## Apk Drive Link
 https://drive.google.com/drive/folders/1kaUMyGFId_B312-gMJLIFL9b1q5Il_o1?usp=sharing
